@@ -3,6 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Play, Clock, Star } from "lucide-react";
 
 interface StoryCardProps {
+  id?: string;
   title: string;
   description: string;
   image: string;

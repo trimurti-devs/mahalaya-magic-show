@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Sparkles } from "lucide-react";
 
@@ -6,10 +7,10 @@ export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { label: "Stories", href: "#stories" },
-    { label: "Mahalaya", href: "#mahalaya" },
-    { label: "Durga Puja", href: "#durga-puja" },
-    { label: "Traditions", href: "#traditions" },
+    { label: "Stories", href: "/stories" },
+    { label: "Mahalaya", href: "/mahalaya" },
+    { label: "Durga Puja", href: "/durga-puja" },
+    { label: "Traditions", href: "/traditions" },
   ];
 
   return (
@@ -18,22 +19,24 @@ export const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center gap-2">
-            <Sparkles className="w-8 h-8 text-primary" />
-            <span className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Mahalaya
-            </span>
+            <Link to="/" className="flex items-center gap-2">
+              <Sparkles className="w-8 h-8 text-primary" />
+              <span className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+                Mahalaya
+              </span>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.label}
-                href={item.href}
+                to={item.href}
                 className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </div>
 
@@ -60,14 +63,14 @@ export const Navigation = () => {
           <div className="md:hidden py-4 border-t border-border/50">
             <div className="flex flex-col space-y-4">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.label}
-                  href={item.href}
+                  to={item.href}
                   className="text-foreground hover:text-primary transition-colors duration-200 font-medium py-2"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
               <Button className="hero-button mt-4">
                 Start Devotion

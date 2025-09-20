@@ -1,6 +1,5 @@
-import { Link } from "react-router-dom";
-import { StoryCard } from "./StoryCard";
-import { Button } from "@/components/ui/button";
+import { Navigation } from "@/components/Navigation";
+import { StoryCard } from "@/components/StoryCard";
 import mahishasuraBattleImage from "@/assets/mahishasura-battle.jpg";
 import mahalayaMorningImage from "@/assets/mahalaya-morning.jpg";
 import durgaPujaPandalImage from "@/assets/durga-puja-pandal.jpg";
@@ -48,47 +47,50 @@ const stories = [
     id: "nine-forms-durga",
     title: "The Nine Forms of Durga",
     description: "Explore the Navadurga - nine divine manifestations of the goddess, each with unique powers and significance during the Navratri celebration.",
-    image: durgaPujaPandalImage, // Reusing for demo
+    image: durgaPujaPandalImage,
     duration: "14 min read",
     rating: 4.8,
     category: "Divine Forms"
   }
 ];
 
-export const StoriesSection = () => {
+const Stories = () => {
   return (
-    <section id="stories" className="py-20 px-6">
-      <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Sacred Stories
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Immerse yourself in the divine tales of Goddess Durga, where ancient wisdom meets eternal devotion
-          </p>
-        </div>
+    <div className="min-h-screen bg-background">
+      <Navigation />
+      <main className="pt-24 pb-20 px-6">
+        <div className="max-w-7xl mx-auto">
+          {/* Page Header */}
+          <div className="text-center mb-16 animate-fade-in">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              Sacred Stories
+            </h1>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Discover the divine tales of Goddess Durga and immerse yourself in the eternal wisdom of our sacred traditions
+            </p>
+          </div>
 
-        {/* Stories Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-scale-in">
-          {stories.map((story, index) => (
-            <StoryCard
-              key={story.title}
-              {...story}
-              featured={index === 0}
-            />
-          ))}
-        </div>
+          {/* Featured Story */}
+          <div className="mb-16">
+            <h2 className="text-2xl font-bold mb-8 text-foreground">Featured Story</h2>
+            <div className="max-w-4xl mx-auto">
+              <StoryCard {...stories[0]} featured={true} />
+            </div>
+          </div>
 
-        {/* Call to Action */}
-        <div className="text-center mt-16">
-          <Link to="/stories">
-            <Button size="lg" className="hero-button px-8 py-4 text-lg font-semibold">
-              Explore All Stories
-            </Button>
-          </Link>
+          {/* All Stories Grid */}
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold mb-8 text-foreground">All Stories</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-scale-in">
+              {stories.map((story) => (
+                <StoryCard key={story.id} {...story} />
+              ))}
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </main>
+    </div>
   );
 };
+
+export default Stories;
