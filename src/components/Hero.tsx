@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-image.jpg";
+import heroImage from "@/assets/durga-hero.jpg";
 
 export const Hero = () => {
   return (
@@ -23,18 +23,18 @@ export const Hero = () => {
       {/* Content */}
       <div className="relative z-20 text-center max-w-4xl mx-auto px-6 animate-fade-in">
         <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent animate-glow">
-          Mahalay
+          Mahalaya
         </h1>
         <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-          Discover the enchanting world of Filipino folklore through immersive stories, 
-          stunning visuals, and captivating animations that bring ancient tales to modern life.
+          Experience the divine stories of Goddess Durga's victory over evil. 
+          Immerse yourself in the sacred tales of Mahalaya and the magnificent ten-day celebration of Durga Puja.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Button size="lg" className="hero-button px-8 py-6 text-lg font-semibold">
-            Explore Stories
+            Begin the Journey
           </Button>
           <Button size="lg" variant="outline" className="px-8 py-6 text-lg border-primary text-primary hover:bg-primary hover:text-primary-foreground">
-            Watch Preview
+            Listen to Chandi Path
           </Button>
         </div>
       </div>

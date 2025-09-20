@@ -7,9 +7,9 @@ export const Navigation = () => {
 
   const navItems = [
     { label: "Stories", href: "#stories" },
-    { label: "Categories", href: "#categories" },
-    { label: "Featured", href: "#featured" },
-    { label: "About", href: "#about" },
+    { label: "Mahalaya", href: "#mahalaya" },
+    { label: "Durga Puja", href: "#durga-puja" },
+    { label: "Traditions", href: "#traditions" },
   ];
 
   return (
@@ -20,7 +20,7 @@ export const Navigation = () => {
           <div className="flex items-center gap-2">
             <Sparkles className="w-8 h-8 text-primary" />
             <span className="text-2xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Mahalay
+              Mahalaya
             </span>
           </div>
 
@@ -40,7 +40,7 @@ export const Navigation = () => {
           {/* CTA Button */}
           <div className="hidden md:block">
             <Button className="hero-button">
-              Get Started
+              Start Devotion
             </Button>
           </div>
 
@@ -70,7 +70,7 @@ export const Navigation = () => {
                 </a>
               ))}
               <Button className="hero-button mt-4">
-                Get Started
+                Start Devotion
               </Button>
             </div>
           </div>
